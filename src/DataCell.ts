@@ -2,13 +2,13 @@ import { createElement } from '../common';
 import { SimpleTableColumn, SimpleTableConfig } from '../types';
 
 export default (dataItem, column) => {
-  const { dataValue } = column;
-  const valueType = typeof dataValue;
+  const { valueProvider } = column;
+  const valueType = typeof valueProvider;
   return createElement({
     type: 'td',
     value:
       valueType === 'function'
-        ? dataValue(dataItem, column)
-        : dataItem[dataValue],
+        ? valueProvider(dataItem, column)
+        : dataItem[valueProvider],
   });
 };

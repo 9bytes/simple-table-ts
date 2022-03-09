@@ -6,11 +6,11 @@ import './stts-style.css';
 Table({
   target: 'stts-container',
   columns: [
-    { headerText: 'First Name', dataValue: 'firstName' },
+    { headerText: 'First Name', valueProvider: 'firstName' },
     {
       headerText: 'Last Name',
-      dataValue: (item, column) => {
-        return item['firstName'] + ' ' + item['lastName'];
+      valueProvider: (item, column) => {
+        return `<input type="checkbox" onchange="alert('${item['firstName']}')">`;
       },
     },
   ],

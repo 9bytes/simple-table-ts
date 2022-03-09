@@ -16,7 +16,9 @@ export type SimpleTableHeader = {
 
 export type SimpleTableColumn = {
   headerText: string;
-  dataValue: string | ((dataItem: any, column: SimpleTableColumn) => string);
+  valueProvider:
+    | string
+    | ((dataItem: any, column: SimpleTableColumn) => string);
   dataRype?: string;
   width?: number;
   sorting?: true;
