@@ -1,6 +1,19 @@
 // Import stylesheets
+import Table from './src/Table';
 import './stts-style.css';
 
-// Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('stts-container');
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
+// Write TypeScript
+Table({
+  target: 'stts-container',
+  columns: [
+    { headerText: 'First Name', dataValue: 'firstName' },
+    {
+      headerText: 'Last Name',
+      dataValue: (item, column) => {
+        return item['firstName'] + ' ' + item['lastName'];
+      },
+    },
+  ],
+  data: [{ firstName: 'Mahesh', lastName: 'Varma' }],
+  options: {},
+});

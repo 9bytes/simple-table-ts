@@ -1,17 +1,17 @@
 import { createElement } from '../common';
-import { SimpleTableColumn } from '../types';
-import HeaderCell from './HeaderCell';
+import { SimpleTableConfig } from '../types';
+import DataCell from './DataCell';
 
-export default (columns: SimpleTableColumn[]) => {
+export default (dataItem, columns) => {
   return (
     columns !== null &&
     columns.reduce(
       (acc, column) => {
-        acc.appendChild(HeaderCell(column));
+        acc.appendChild(DataCell(dataItem, column));
         return acc;
       },
       createElement({
-        type: 'thead',
+        type: 'tr',
       })
     )
   );

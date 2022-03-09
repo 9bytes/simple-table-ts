@@ -1,8 +1,8 @@
-export type SimpleTable = {
+export type SimpleTableConfig = {
   target: string;
   options: SimpleTableOptions;
   columns: SimpleTableColumn[];
-  data: Array<object>;
+  data: any[];
 };
 
 export type SimpleTableOptions = {
@@ -16,7 +16,7 @@ export type SimpleTableHeader = {
 
 export type SimpleTableColumn = {
   headerText: string;
-  dataField: string | Function;
+  dataValue: string | ((dataItem: any, column: SimpleTableColumn) => string);
   dataRype?: string;
   width?: number;
   sorting?: true;
