@@ -11,5 +11,12 @@ export default (sTable: SimpleTableConfig) => {
   });
   tableEl.appendChild(TableHeader(columns));
   tableEl.appendChild(TableBody(sTable));
-  getDocumentElement(target).appendChild(tableEl);
+
+  const wrap = createElement({
+    type: 'div',
+    id: 'stts-wrapper',
+  });
+
+  wrap.appendChild(tableEl);
+  getDocumentElement(target).appendChild(wrap);
 };

@@ -1,3 +1,9 @@
 #stts-wrapper {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
+  font-size: 12px;
+}
+
+#stts-wrapper td {
+  border-color: gray;
+  border-bottom: 1px #ccc solid;
 }
