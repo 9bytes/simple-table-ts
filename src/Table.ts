@@ -1,16 +1,16 @@
 import { createElement, getDocumentElement } from '../common';
-import { SimpleTableConfig } from '../types';
+import { TableConfig } from '../types';
 import TableBody from './TableBody';
 import TableHeader from './TableHeader';
 
-export default (sTable: SimpleTableConfig) => {
-  const { target, columns, data, options } = sTable;
+export default (tableComfig: TableConfig) => {
+  const { target, columns, data, options } = tableComfig;
   const tableEl = createElement({
     type: 'table',
     id: 'stts-table',
   });
   tableEl.appendChild(TableHeader(columns));
-  tableEl.appendChild(TableBody(sTable));
+  tableEl.appendChild(TableBody(tableComfig));
 
   const wrap = createElement({
     type: 'div',

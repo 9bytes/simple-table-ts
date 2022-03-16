@@ -1,24 +1,22 @@
-export type SimpleTableConfig = {
+export type TableConfig = {
   target: string;
-  options: SimpleTableOptions;
-  columns: SimpleTableColumn[];
+  options: TableOptions;
+  columns: TableColumn[];
   data: any[];
 };
 
-export type SimpleTableOptions = {
-  header?: SimpleTableHeader;
+export type TableOptions = {
+  header?: TableHeader;
 };
 
-export type SimpleTableHeader = {
+export type TableHeader = {
   left?: HTMLElement;
   right?: HTMLElement;
 };
 
-export type SimpleTableColumn = {
+export type TableColumn = {
   headerText: string;
-  valueProvider:
-    | string
-    | ((dataItem: any, column: SimpleTableColumn) => string);
+  valueProvider: string | ((dataItem: any, column: TableColumn) => string);
   dataRype?: string;
   width?: number;
   sorting?: true;

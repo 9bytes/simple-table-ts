@@ -1,5 +1,4 @@
 import { createElement } from '../common';
-import { SimpleTableConfig } from '../types';
 import DataCell from './DataCell';
 
 export default (dataItem, columns) => {

@@ -1,10 +1,8 @@
 import { createElement } from '../common';
-import { SimpleTableConfig } from '../types';
-import DataCell from './DataCell';
-import TableHeader from './TableHeader';
+import { TableConfig } from '../types';
 import TableRow from './TableRow';
 
-export default (config: SimpleTableConfig) => {
+export default (config: TableConfig) => {
   const { columns, data: tblData } = config;
   return (
     tblData !== null &&

@@ -1,8 +1,8 @@
 import { createElement } from '../common';
-import { SimpleTableColumn } from '../types';
+import { TableColumn } from '../types';
 import HeaderCell from './HeaderCell';
 
-export default (columns: SimpleTableColumn[]) => {
+export default (columns: TableColumn[]) => {
   return (
     columns !== null &&
     columns.reduce(

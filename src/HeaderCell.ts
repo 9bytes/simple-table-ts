@@ -1,7 +1,7 @@
 import { createElement } from '../common';
-import { SimpleTableColumn } from '../types';
+import { TableColumn } from '../types';
 
-export default (column: SimpleTableColumn) => {
+export default (column: TableColumn) => {
   return createElement({
     type: 'th',
     value: column.headerText,
